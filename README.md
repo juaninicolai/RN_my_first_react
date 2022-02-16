@@ -1,5 +1,7 @@
 # ReactNative_my-first-react
 
+Branches:
+
 1. Master
 2. reactIntro: components introduction, building a mobile app first approach.
 3. TODOapp: 
