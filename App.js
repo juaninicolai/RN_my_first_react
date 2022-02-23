@@ -1,19 +1,13 @@
-import { StatusBar } from "expo-status-bar";
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import MyStack from "./routes/MyStack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+const Tab = createBottomTabNavigator();
 export default function App() {
-  <View>
-    <Text>Hello World</Text>
-    <StatusBar style="auto" />
-  </View>;
+  return (
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
