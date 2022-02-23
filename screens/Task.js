@@ -2,13 +2,13 @@ import React from "react";
 import { Text, View, Button } from "react-native";
 import { global } from "../styles/global";
 
-const Task = ({ navigation }) => {
+const Task = ({ navigation, route }) => {
   const goToHome = () => {
     navigation.pop();
   };
   return (
     <View style={global.container}>
-      <Text>Task</Text>
+      <Text>{route.params.task}</Text>
       <Button title="Back to Home" onPress={goToHome} />
     </View>
   );

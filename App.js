@@ -1,13 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import MyStack from "./routes/MyStack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import MyDrawer from "./routes/MyDrawer";
 
-const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <MyStack />
+      <MyDrawer />
     </NavigationContainer>
   );
 }

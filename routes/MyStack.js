@@ -1,27 +1,39 @@
 import React from "react";
 import Home from "../screens/Home";
 import Task from "../screens/Task";
+import About from "../screens/About";
 import { createStackNavigator } from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
+const screenOptionsStyle = {
+  headerStyle: {
+    backgroundColor: "red",
+  },
+  headerTintColor: "white",
+  headerTintStyle: {
+    fontWeight: "bold",
+  },
+};
 
-const MyStack = () => {
+const AboutStack = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: "red",
-        },
-        headerTintColor: "white",
-        headerTintStyle: {
-          fontWeight: "bold",
-        },
-      }}
-    >
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Task" component={Task} />
+    <Stack.Navigator screenOptions={screenOptionsStyle}>
+      <Stack.Screen name="About" component={About} />
     </Stack.Navigator>
   );
 };
 
-export default MyStack;
+const HomeStack = () => {
+  return (
+    <Stack.Navigator screenOptions={screenOptionsStyle}>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen
+        name="Task"
+        component={Task}
+        options={({ route }) => ({ title: route.params.task })}
+      />
+    </Stack.Navigator>
+  );
+};
+
+export { HomeStack, AboutStack };
